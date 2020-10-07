@@ -11,10 +11,23 @@ def linear_search(arr, target):
 
 
 
-# Write an iterative implementation of Binary Search
+# CAUTION!! Data set must sorted and ordered to use BS
 def binary_search(arr, target):
-
-    # Your code here
+    # create the outer bounds
+    low = 0
+    high = len(arr) - 1
+    
+    # iterate through array
+    while low <= high:
+        # get the middle
+        middle = (low + high) // 2
+        guess = arr[middle]
+        if guess == target:
+            return middle
+        if guess > target:
+            high = middle - 1
+        else: 
+            low = middle + 1
 
 
     return -1  # not found
